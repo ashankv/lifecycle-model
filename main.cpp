@@ -30,5 +30,5 @@ int main(int argc, char** argv) {
     double seconds = diff.count();
 
     // Finalize
-    std::cout << "Simulation Time = " << seconds << " seconds for " << num_parts << " particles.\n";
+    std::cout << "Simulation Time = " << seconds << " seconds.\n";
 }
