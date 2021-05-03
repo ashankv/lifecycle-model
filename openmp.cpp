@@ -13,7 +13,7 @@ double w = 10000;
 double sigma = 0.5;
 double beta = 0.9;
 
-double utility(double consumption, double expected_value) {
+double utility_fn(double consumption, double expected_value) {
     return std::pow(consumption, 1 - sigma) / (1 - sigma);
 }
 
@@ -33,10 +33,10 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
         }
 
         double consumption = (1 + r) * capitals[x] + shocks[e] * w - capitals[ix];
-        double utility = utility(consumption) + beta * expected_value;
+        double utility = utility_fn(consumption) + beta * expected_value;
 
         if (consumption <= 0) {
-            utility = -0.00001
+            utility = -0.00001;
         }
 
         if (utility >= best_value) {
@@ -54,7 +54,7 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
 
     for (int x = 0; x < capitals.size(); x++) {
         for (int e = 0; e < shocks.size(); e++) {
-            V_memo[T - 1][x][e] = utility((1 + r) * capitals[x] + shocks[e] * w);
+            V_memo[T - 1][x][e] = utility_fn((1 + r) * capitals[x] + shocks[e] * w);
         }
     }
 
