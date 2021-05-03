@@ -6,10 +6,6 @@
 #include <set>
 #include <iostream>
 
-// Put any static global variables here that you will use throughout the simulation.
-size_t T_size = 100;
-size_t capital_size = 100;
-size_t shock_size = 10;
 double V_memo[100][100][10] = {};
 double r = 0.05;
 double w = 10000;
@@ -68,11 +64,11 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
         }
     }
 
-    for (int ix = 0; ix < capitals.size(); ix++) {
-        for (int ie = 0; ie < shocks.size(); ie++) {
-            std::cout << V_memo[0][ix][ie] << ", ";
-        }
-
-        std::cout << "" << std::endl;
-    }
+    // for (int ix = 0; ix < capitals.size(); ix++) {
+    //     for (int ie = 0; ie < shocks.size(); ie++) {
+    //         std::cout << V_memo[0][ix][ie] << ", ";
+    //     }
+    //
+    //     std::cout << "" << std::endl;
+    // }
 }
