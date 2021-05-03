@@ -1,5 +1,6 @@
 #ifndef __CS267_COMMON_H__
 #define __CS267_COMMON_H__
+#include <vector>
 
 // // Program Constants
 // #define nsteps   1000
@@ -24,6 +25,6 @@
 // void init_simulation(particle_t* parts, int num_parts, double size);
 // void simulate_one_step(particle_t* parts, int num_parts, double size);
 
-void lifecycle(int T, vector<double>& capitals, vector<double>& shocks, double (&P)[100][100]);
+void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks, double (&P)[100][100]);
 
 #endif
