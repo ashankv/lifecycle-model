@@ -27,7 +27,7 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
         // double check this indexing
         if (t < T - 1) {
             for (int ie = 0; ie < shocks.size(); ie++) {
-                expected_value += P[e][ie] * (V_memo[t+1][ix][ie])
+                expected_value += P[e][ie] * (V_memo[t+1][ix][ie]);
             }
         }
 
