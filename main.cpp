@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
     std::vector<double> capitals;
 
     int val = 0;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000; i++) {
         capitals.push_back(val);
         val += 1000;
     }
