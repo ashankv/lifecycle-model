@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
 #pragma omp parallel default(shared)
 #endif
     {
-        lifecycle(T, capitals, shocks, &P);
+        lifecycle(T, capitals, shocks, P);
     }
 
     auto end_time = std::chrono::steady_clock::now();
