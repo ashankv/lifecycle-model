@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
 #pragma omp parallel default(shared)
 #endif
     {
-        double[][] result = lifecycle(T, capitals, shocks, P);
+        lifecycle(T, capitals, shocks, P);
     }
 
     auto end_time = std::chrono::steady_clock::now();
@@ -66,12 +66,4 @@ int main(int argc, char** argv) {
 
     // Finalize
     std::cout << "Simulation Time = " << seconds << " seconds.\n";
-
-    for (int ix = 0; ix < capitals.size(); ix++) {
-        for (int ie = 0; ie < shocks.size(); ie++) {
-            std::cout << result[ix][ie] << ", ";
-        }
-
-        std::cout << "" << std::endl;
-    }
 }

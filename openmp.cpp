@@ -47,7 +47,7 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
     return best_value;
 }
 
-double[][] lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks, std::vector<std::vector<double>>& P) {
+void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks, std::vector<std::vector<double>>& P) {
 
     for (int x = 0; x < capitals.size(); x++) {
         for (int e = 0; e < shocks.size(); e++) {
@@ -64,13 +64,14 @@ double[][] lifecycle(int T, std::vector<double>& capitals, std::vector<double>& 
         }
     }
 
-    // for (int ix = 0; ix < capitals.size(); ix++) {
-    //     for (int ie = 0; ie < shocks.size(); ie++) {
-    //         std::cout << V_memo[0][ix][ie] << ", ";
-    //     }
-    //
-    //     std::cout << "" << std::endl;
-    // }
+    int id = omp_get_thread_num();
+    if (id == 1) {
+      for (int ix = 0; ix < capitals.size(); ix++) {
+          for (int ie = 0; ie < shocks.size(); ie++) {
+              std::cout << V_memo[0][ix][ie] << ", ";
+          }
 
-    return V_memo;
+          std::cout << "" << std::endl;
+      }
+    }
 }
