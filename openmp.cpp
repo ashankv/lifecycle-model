@@ -67,11 +67,11 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
         }
     }
 
-    for (int ix = 0; ix < capitals.size(); ix++) {
-        for (int ie = 0; ie < shocks.size(); ie++) {
-            std::cout << V_memo[0][ix][ie] << ", ";
-        }
-
-        std::cout << "" << std::endl;
-    }
+    // for (int ix = 0; ix < capitals.size(); ix++) {
+    //     for (int ie = 0; ie < shocks.size(); ie++) {
+    //         std::cout << V_memo[0][ix][ie] << ", ";
+    //     }
+    //
+    //     std::cout << "" << std::endl;
+    // }
 }
