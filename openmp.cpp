@@ -61,7 +61,7 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
     for (int t = T - 2; t >= 0; t--) {
         for (int x = 0; x < capitals.size(); x++) {
             for (int e = 0; e < shocks.size(); e++) {
-                V_memo[t][x][e] = value(t, x, e, T, capitals, shocks);
+                V_memo[t][x][e] = value(t, x, e, T, capitals, shocks, P);
             }
         }
     }
