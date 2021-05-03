@@ -48,7 +48,6 @@ double value(t, x, e, T, vector<double>& capitals, vector<double>& shocks, doubl
 }
 
 void lifecycle(int T, vector<double>& capitals, vector<double>& shocks, double (&P)[100][100]) {
-    // std::cout << "Hello world" << std::endl;
 
     double r = 0.05;
     double w = 10000;
