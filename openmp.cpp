@@ -7,9 +7,9 @@
 #include <iostream>
 
 // Put any static global variables here that you will use throughout the simulation.
-int T_size = 100;
-int capital_size = 100;
-int shock_size = 10;
+size_t T_size = 100;
+size_t capital_size = 100;
+size_t shock_size = 10;
 double V_memo[T_size][capital_size][shock_size] = {};
 double r = 0.05;
 double w = 10000;
