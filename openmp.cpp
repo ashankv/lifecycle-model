@@ -50,28 +50,28 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
 
 void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks, std::vector<std::vector<double>>& P) {
 
-    std::cout << "Hello World" << std::endl;
-    std::cout << "===========" << std::endl;
+    // std::cout << "Hello World" << std::endl;
+    // std::cout << "===========" << std::endl;
 
-    // for (int x = 0; x < capitals.size(); x++) {
-    //     for (int e = 0; e < shocks.size(); e++) {
-    //         V_memo[T - 1][x][e] = utility_fn((1 + r) * capitals[x] + shocks[e] * w);
-    //     }
-    // }
-    //
-    // for (int t = T - 2; t >= 0; t--) {
-    //     for (int x = 0; x < capitals.size(); x++) {
-    //         for (int e = 0; e < shocks.size(); e++) {
-    //             V_memo[t][x][e] = value(t, x, e, T, capitals, shocks, P);
-    //         }
-    //     }
-    // }
-    //
-    // for (int ix = 0; ix < capitals.size(); ix++) {
-    //     for (int ie = 0; ie < shocks.size(); ie++) {
-    //         std::cout << V_memo[0][ix][ie] << ", ";
-    //     }
-    //
-    //     std::cout << "" << std::endl;
-    // }
+    for (int x = 0; x < capitals.size(); x++) {
+        for (int e = 0; e < shocks.size(); e++) {
+            V_memo[T - 1][x][e] = utility_fn((1 + r) * capitals[x] + shocks[e] * w);
+        }
+    }
+
+    for (int t = T - 2; t >= 0; t--) {
+        for (int x = 0; x < capitals.size(); x++) {
+            for (int e = 0; e < shocks.size(); e++) {
+                V_memo[t][x][e] = value(t, x, e, T, capitals, shocks, P);
+            }
+        }
+    }
+
+    for (int ix = 0; ix < capitals.size(); ix++) {
+        for (int ie = 0; ie < shocks.size(); ie++) {
+            std::cout << V_memo[0][ix][ie] << ", ";
+        }
+
+        std::cout << "" << std::endl;
+    }
 }
