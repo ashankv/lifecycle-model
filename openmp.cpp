@@ -8,11 +8,12 @@
 
 // Put any static global variables here that you will use throughout the simulation.
 double V_memo[100][10][10] = {};
+double r = 0.05;
+double w = 10000;
+double sigma = 0.5;
+double beta = 0.9;
 
 double utility(double consumption, double expected_value) {
-    double sigma = 0.5;
-    double beta = 0.9;
-
     return std::pow(consumption, 1 - sigma) / (1 - sigma);
 }
 
@@ -49,8 +50,7 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
 
 void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks, std::vector<std::vector<double>>& P) {
 
-    double r = 0.05;
-    double w = 10000;
+
 
     for (int x = 0; x < capitals.size(); x++) {
         for (int e = 0; e < shocks.size(); e++) {
