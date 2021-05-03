@@ -64,8 +64,8 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
         }
     }
 
-    int id = omp_get_thread_num();
-    if (id == 1) {
+    // int id = omp_get_thread_num();
+    // if (id == 1) {
       for (int ix = 0; ix < capitals.size(); ix++) {
           for (int ie = 0; ie < shocks.size(); ie++) {
               std::cout << V_memo[0][ix][ie] << ", ";
@@ -73,5 +73,5 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
 
           std::cout << "" << std::endl;
       }
-    }
+    // }
 }
