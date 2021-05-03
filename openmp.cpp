@@ -13,7 +13,7 @@ double w = 10000;
 double sigma = 0.5;
 double beta = 0.9;
 
-double utility_fn(double consumption, double expected_value) {
+double utility_fn(double consumption) {
     return std::pow(consumption, 1 - sigma) / (1 - sigma);
 }
 
