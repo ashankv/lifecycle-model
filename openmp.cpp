@@ -32,7 +32,7 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
             }
         }
 
-        double consumption = (1 + r) * capitals[x] + shocks[e] * w - capitals[ix]
+        double consumption = (1 + r) * capitals[x] + shocks[e] * w - capitals[ix];
         double utility = utility(consumption) + beta * expected_value;
 
         if (consumption <= 0) {
@@ -61,7 +61,7 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
     for (int t = T - 2; t >= 0; t--) {
         for (int x = 0; x < capitals.size(); x++) {
             for (int e = 0; e < shocks.size(); e++) {
-                V_memo[t][x][e] = value(t, x, e, T, capitals, shocks, V_memo);
+                V_memo[t][x][e] = value(t, x, e, T, capitals, shocks);
             }
         }
     }
