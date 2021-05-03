@@ -20,7 +20,6 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
 
     double best_value = -0.001;
 
-    #pragma omp parallel for
     for (int ix = 0; ix < capitals.size(); ix++) {
 
         double expected_value = 0.0;
@@ -57,7 +56,7 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
     }
 
     for (int t = T - 2; t >= 0; t--) {
-        // #pragma omp parallel for
+        #pragma omp parallel for
         for (int x = 0; x < capitals.size(); x++) {
             for (int e = 0; e < shocks.size(); e++) {
                 V_memo[t][x][e] = value(t, x, e, T, capitals, shocks, P);
