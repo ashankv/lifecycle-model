@@ -7,7 +7,7 @@
 #include <iostream>
 
 // Put any static global variables here that you will use throughout the simulation.
-double V_memo[100][10][10] = {};
+double V_memo[100][100][10] = {};
 double r = 0.05;
 double w = 10000;
 double sigma = 0.5;
