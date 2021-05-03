@@ -20,6 +20,7 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
 
     double best_value = -0.001;
 
+    #pragma omp parallel for
     for (int ix = 0; ix < capitals.size(); ix++) {
 
         double expected_value = 0.0;
@@ -64,14 +65,11 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
         }
     }
 
-    // int id = omp_get_thread_num();
-    // if (id == 1) {
-      for (int ix = 0; ix < capitals.size(); ix++) {
-          for (int ie = 0; ie < shocks.size(); ie++) {
-              std::cout << V_memo[0][ix][ie] << ", ";
-          }
-
-          std::cout << "" << std::endl;
+    for (int ix = 0; ix < capitals.size(); ix++) {
+      for (int ie = 0; ie < shocks.size(); ie++) {
+          std::cout << V_memo[0][ix][ie] << ", ";
       }
-    // }
+
+      std::cout << "" << std::endl;
+    }
 }
