@@ -16,7 +16,7 @@ double utility(double consumption, double expected_value) {
     return std::pow(consumption, 1 - sigma) / (1 - sigma);
 }
 
-double value(t, x, e, T, std::vector<double>& capitals, std::vector<double>& shocks, std::vector<std::vector<double>>& P) {
+double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vector<double>& shocks, std::vector<std::vector<double>>& P) {
 
     double best_value = -0.001;
 
