@@ -24,6 +24,6 @@
 // void init_simulation(particle_t* parts, int num_parts, double size);
 // void simulate_one_step(particle_t* parts, int num_parts, double size);
 
-void lifecycle();
+void lifecycle(int T, vector<double>& capitals, vector<double>& shocks, double (&P)[100][100]);
 
 #endif
