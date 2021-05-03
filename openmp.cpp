@@ -47,7 +47,7 @@ double value(int t, int x, int e, int T, std::vector<double>& capitals, std::vec
     return best_value;
 }
 
-void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks, std::vector<std::vector<double>>& P) {
+double[][] lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks, std::vector<std::vector<double>>& P) {
 
     for (int x = 0; x < capitals.size(); x++) {
         for (int e = 0; e < shocks.size(); e++) {
@@ -71,4 +71,6 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
     //
     //     std::cout << "" << std::endl;
     // }
+
+    return V_memo;
 }
