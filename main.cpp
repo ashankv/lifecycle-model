@@ -14,11 +14,13 @@
 
 int main(int argc, char** argv) {
 
-    int T = 100;
+    int T = stoi(argv[1]);
+    int num_capitals = stoi(argv[2]);
+
     std::vector<double> capitals;
 
     int val = 0;
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < num_capitals; i++) {
         capitals.push_back(val);
         val += 1000;
     }

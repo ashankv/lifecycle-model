@@ -62,8 +62,6 @@ void lifecycle(int T, std::vector<double>& capitals, std::vector<double>& shocks
                 V_memo[t][x][e] = value(t, x, e, T, capitals, shocks, P);
             }
         }
-
-        #pragma omp barrier
     }
 
     for (int ix = 0; ix < capitals.size(); ix++) {
