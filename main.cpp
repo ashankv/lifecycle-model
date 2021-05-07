@@ -14,8 +14,11 @@
 
 int main(int argc, char** argv) {
 
-    int T = stoi(argv[1]);
-    int num_capitals = stoi(argv[2]);
+    // int T = stoi(argv[1]);
+    // int num_capitals = stoi(argv[2])    ;
+
+    int T = 2;
+    int num_capitals = 10;
 
     std::vector<double> capitals;
 
