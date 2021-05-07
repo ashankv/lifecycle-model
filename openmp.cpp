@@ -6,7 +6,7 @@
 #include <set>
 #include <iostream>
 
-double V_memo[100][1000][10] = {};
+double V_memo[100][500][10] = {};
 double r = 0.05;
 double w = 10000;
 double sigma = 0.5;
