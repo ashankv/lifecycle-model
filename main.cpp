@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
     // int num_capitals = stoi(argv[2])    ;
 
     int T = 100;
-    int num_capitals = 200;
+    int num_capitals = 100;
 
     std::vector<double> capitals;
 
