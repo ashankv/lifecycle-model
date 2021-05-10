@@ -6,9 +6,9 @@
 #SBATCH -t 00:30:00
 
 #OpenMP settings:
-export OMP_NUM_THREADS=64
+export OMP_NUM_THREADS=32
 export OMP_PLACES=cores
 export OMP_PROC_BIND=spread
 
 #run the application:
-srun -n 1 -c 64 --cpu_bind=cores ./openmp
+srun -n 1 -c 32 --cpu_bind=cores ./openmp
